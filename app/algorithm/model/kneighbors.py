@@ -10,17 +10,7 @@ warnings.filterwarnings('ignore')
 from sklearn.neighbors import KNeighborsClassifier
 
 model_fname = "model.save"
-MODEL_NAME = "kneigborsclassifer_sklearn"
-
-COST_THRESHOLD = float('inf')
-
-
-# class InfCostStopCallback(Callback):
-#     def on_epoch_end(self, epoch, logs={}):
-#         loss_val = logs.get('loss')
-#         if(loss_val == COST_THRESHOLD or tf.math.is_nan(loss_val)):
-#             print("Cost is inf, so stopping training!!")
-#             self.model.stop_training = True
+MODEL_NAME = "binary_class_knn_sklearn"
 
 
 class kneighborsclassifier_sklearn(): 
@@ -74,7 +64,6 @@ class kneighborsclassifier_sklearn():
 
 
 def save_model(model, model_path):
-    # print(os.path.join(model_path, model_fname))
     joblib.dump(model, os.path.join(model_path, model_fname)) #this one works
     # print("where the save_model function is saving the model to: " + os.path.join(model_path, model_fname))
     
