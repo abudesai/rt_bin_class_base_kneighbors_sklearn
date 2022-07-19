@@ -16,7 +16,6 @@ MODEL_NAME = "binary_class_knn_sklearn"
 class kneighborsclassifier_sklearn(): 
     
     def __init__(self, n_neighbors = 5, weights = "uniform", p = 2, algorithm = "auto", leaf_size = 30, **kwargs) -> None:
-        super(kneighborsclassifier_sklearn, self).__init__(**kwargs)
         self.n_neighbors = int(n_neighbors)
         self.weights = weights
         self.p = int(p)
