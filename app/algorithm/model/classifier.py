@@ -10,18 +10,19 @@ warnings.filterwarnings('ignore')
 from sklearn.neighbors import KNeighborsClassifier
 
 model_fname = "model.save"
-MODEL_NAME = "binary_class_knn_sklearn"
+
+MODEL_NAME = "bin_class_base_knn_sklearn"
 
 
-class kneighborsclassifier_sklearn(): 
+class Classifier(): 
     
-    def __init__(self, n_neighbors = 5, weights = "uniform", p = 2, algorithm = "auto", leaf_size = 30, **kwargs) -> None:
+    def __init__(self, n_neighbors = 5, weights = "uniform", p = 2, algorithm = "auto", 
+                 leaf_size = 30, **kwargs) -> None:
         self.n_neighbors = int(n_neighbors)
         self.weights = weights
         self.p = int(p)
         self.algorithm = algorithm
-        self.leaf_size = int(leaf_size)
-        
+        self.leaf_size = int(leaf_size)        
         
         self.model = self.build_model()     
         
@@ -51,7 +52,7 @@ class kneighborsclassifier_sklearn():
 
     
     def save(self, model_path): 
-        joblib.dump(self.model, os.path.join(model_path, model_fname))
+        joblib.dump(self, os.path.join(model_path, model_fname))
         
 
 
